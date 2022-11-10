@@ -1,0 +1,32 @@
+---
+title: "Repro learnr R version issue"
+output:
+learnr::tutorial:
+progressive: true
+allow_skip: true
+runtime: shiny_prerendered
+tutorial:
+id: "some.id"
+version: 1.0
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+```
+
+```{r, context="server-start", include=FALSE}
+# this is the file that causes the issue with R version inside exercise chunks
+source("https://metrics.rstudioprimers.com/learnr/installMetrics", local=TRUE)
+```
+
+Print the R session info within an exercise:
+
+```{r info, exercise=TRUE}
+sessionInfo()
+```
+
+Print the R session info without an exercise:
+```{r}
+sessionInfo()
+```

@@ -14,5 +14,5 @@ p.line(x, y1, legend_label="Temp.", color="blue", line_width=2)
 p.line(x, y2, legend_label="Rate", color="red", line_width=2)
 p.line(x, y3, legend_label="Objects", color="green", line_width=2)
 
-# show the results
+# show the results - this does not work in connect because it does not use curdoc()
 show(p)
